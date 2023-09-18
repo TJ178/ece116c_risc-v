@@ -1,0 +1,443 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/tim/Documents/Quartus/M116C/inst_fetch/questa
+T_opt
+!s110 1670115181
+V66i33mh0gQY0?GmmQi]BW0
+Z2 04 9 4 work testbench fast 0
+=1-103d1caf7355-638bef6c-2bd-5964
+!s124 OEM10U16 
+Z3 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
+Z4 tCvgOpt 0
+n@_opt
+Z5 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1670203897
+V4nWX@ac3<jz@C>30:_N_N3
+R2
+=23-103d1caf7355-638d49f9-135-4fb8
+Z6 !s124 OEM10U17 
+o-quiet -auto_acc_if_foreign -work work
+R4
+n@_opt1
+R5
+R1
+T_opt2
+!s110 1670718773
+Vc^;N@mZ>cTX4fhBDKEk>22
+R2
+=107-103d1caf7355-63952535-1b9-3b80
+R6
+R3
+R4
+n@_opt2
+R5
+valu
+Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z8 !s110 1670718771
+!i10b 1
+!s100 j[;MJYi7Y>EJ=NM9oSo2i2
+Im^e<IJj[C_@hmSk5HG7c]2
+S1
+R1
+w1670708944
+8C:/Users/tim/Documents/Quartus/M116C/inst_fetch/alu.sv
+FC:/Users/tim/Documents/Quartus/M116C/inst_fetch/alu.sv
+!i122 1131
+Z9 L0 1 36
+Z10 VDg1SIo80bB@j0V0VzS_@n1
+Z11 OL;L;2021.2;73
+r1
+!s85 0
+31
+!s108 1670718770.000000
+!s107 C:/Users/tim/Documents/Quartus/M116C/inst_fetch/alu.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/tim/Documents/Quartus/M116C/inst_fetch/alu.sv|
+!i113 0
+Z12 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
+valu_controller
+R7
+R8
+!i10b 1
+!s100 k7e=iW3OVX07Q7IE6RMOm1
+I8W2_gmY;L5Qb0B83kSGcn0
+S1
+R1
+w1668716670
+8C:/Users/tim/Documents/Quartus/M116C/inst_fetch/alu_controller.sv
+FC:/Users/tim/Documents/Quartus/M116C/inst_fetch/alu_controller.sv
+!i122 1132
+L0 1 50
+R10
+R11
+r1
+!s85 0
+31
+Z13 !s108 1670718771.000000
+!s107 C:/Users/tim/Documents/Quartus/M116C/inst_fetch/alu_controller.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/tim/Documents/Quartus/M116C/inst_fetch/alu_controller.sv|
+!i113 0
+R12
+R4
+vcontroller
+R7
+R8
+!i10b 1
+!s100 VM]^NS;k=Ezh4[L<n_KFc3
+If3GE1OTf9o3:UJ?H?a[<d0
+S1
+R1
+w1668716568
+8C:/Users/tim/Documents/Quartus/M116C/inst_fetch/controller.sv
+FC:/Users/tim/Documents/Quartus/M116C/inst_fetch/controller.sv
+!i122 1133
+Z14 L0 1 86
+R10
+R11
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/tim/Documents/Quartus/M116C/inst_fetch/controller.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/tim/Documents/Quartus/M116C/inst_fetch/controller.sv|
+!i113 0
+R12
+R4
+vimmGen
+R7
+R8
+!i10b 1
+!s100 1n9>5d?0D=W1llnj`LZ>T2
+I=FN2aLNFRMalT^H=f3nf41
+S1
+R1
+w1670716546
+8C:/Users/tim/Documents/Quartus/M116C/inst_fetch/immGen.sv
+FC:/Users/tim/Documents/Quartus/M116C/inst_fetch/immGen.sv
+!i122 1134
+L0 1 47
+R10
+R11
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/tim/Documents/Quartus/M116C/inst_fetch/immGen.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/tim/Documents/Quartus/M116C/inst_fetch/immGen.sv|
+!i113 0
+R12
+R4
+nimm@gen
+vinst_decode
+R7
+R8
+!i10b 1
+!s100 =jo:8_lK5]e]B7mAP2[183
+InhQE@@>U<chc@9Hf^?=^k2
+S1
+R1
+w1670706246
+8C:/Users/tim/Documents/Quartus/M116C/inst_fetch/inst_decode.sv
+FC:/Users/tim/Documents/Quartus/M116C/inst_fetch/inst_decode.sv
+!i122 1135
+Z15 L0 1 27
+R10
+R11
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/tim/Documents/Quartus/M116C/inst_fetch/inst_decode.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/tim/Documents/Quartus/M116C/inst_fetch/inst_decode.sv|
+!i113 0
+R12
+R4
+vinst_fetch
+R7
+R8
+!i10b 1
+!s100 ?7Pln0@3W@j7UBNC?GB[O0
+I_1fE9EIALMIhadTm=W]_j1
+S1
+R1
+w1670709607
+8C:/Users/tim/Documents/Quartus/M116C/inst_fetch/inst_fetch.sv
+FC:/Users/tim/Documents/Quartus/M116C/inst_fetch/inst_fetch.sv
+!i122 1136
+R9
+R10
+R11
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/tim/Documents/Quartus/M116C/inst_fetch/inst_fetch.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/tim/Documents/Quartus/M116C/inst_fetch/inst_fetch.sv|
+!i113 0
+R12
+R4
+vprocessor
+R7
+R8
+!i10b 1
+!s100 6DXjYF<`Rkl<0A`6EmZZk1
+IcZ;6eMIg[UVbMD7HLSgS42
+S1
+R1
+w1670717526
+8C:/Users/tim/Documents/Quartus/M116C/inst_fetch/processor.sv
+FC:/Users/tim/Documents/Quartus/M116C/inst_fetch/processor.sv
+!i122 1142
+L0 1 306
+R10
+R11
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/tim/Documents/Quartus/M116C/inst_fetch/processor.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/tim/Documents/Quartus/M116C/inst_fetch/processor.sv|
+!i113 0
+R12
+R4
+vram
+R7
+R8
+!i10b 1
+!s100 TkTVDK]C49?g0@C0DD3i33
+ImdFa5Y38`RFAMQXibE3H@3
+S1
+R1
+w1670111326
+8C:/Users/tim/Documents/Quartus/M116C/inst_fetch/ram.sv
+FC:/Users/tim/Documents/Quartus/M116C/inst_fetch/ram.sv
+!i122 1140
+R15
+R10
+R11
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/tim/Documents/Quartus/M116C/inst_fetch/ram.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/tim/Documents/Quartus/M116C/inst_fetch/ram.sv|
+!i113 0
+R12
+R4
+vregFile
+R7
+R8
+!i10b 1
+!s100 MY:gP1O<Pi5@U4z7?;ZjK0
+IVf@DDWn>fR3JcaZga=oih3
+S1
+R1
+w1670709505
+8C:/Users/tim/Documents/Quartus/M116C/inst_fetch/regFile.sv
+FC:/Users/tim/Documents/Quartus/M116C/inst_fetch/regFile.sv
+!i122 1137
+L0 1 40
+R10
+R11
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/tim/Documents/Quartus/M116C/inst_fetch/regFile.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/tim/Documents/Quartus/M116C/inst_fetch/regFile.sv|
+!i113 0
+R12
+R4
+nreg@file
+vrename
+R7
+R8
+!i10b 1
+!s100 lA:=QE=U4Pio>>iaaodhF3
+Ii7I>Ca`U86fLJbF_BJCI<3
+S1
+R1
+w1670711232
+8C:/Users/tim/Documents/Quartus/M116C/inst_fetch/rename.sv
+FC:/Users/tim/Documents/Quartus/M116C/inst_fetch/rename.sv
+!i122 1138
+L0 1 75
+R10
+R11
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/tim/Documents/Quartus/M116C/inst_fetch/rename.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/tim/Documents/Quartus/M116C/inst_fetch/rename.sv|
+!i113 0
+R12
+R4
+vrob
+R7
+R8
+!i10b 1
+!s100 inJIoEgCG5=lbdzV@@aF23
+IIDLS?9`;hH_BJm1l`l6BR1
+S1
+R1
+w1670397355
+8C:/Users/tim/Documents/Quartus/M116C/inst_fetch/rob.sv
+FC:/Users/tim/Documents/Quartus/M116C/inst_fetch/rob.sv
+!i122 1141
+R14
+R10
+R11
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/tim/Documents/Quartus/M116C/inst_fetch/rob.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/tim/Documents/Quartus/M116C/inst_fetch/rob.sv|
+!i113 0
+R12
+R4
+vrs
+R7
+R8
+!i10b 1
+!s100 i]MQC7gE3z>@13:kVlO;91
+I8oHZE1eYn8P_BGLAB>W<c3
+S1
+R1
+w1670718766
+8C:/Users/tim/Documents/Quartus/M116C/inst_fetch/rs.sv
+FC:/Users/tim/Documents/Quartus/M116C/inst_fetch/rs.sv
+!i122 1139
+L0 1 245
+R10
+R11
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/tim/Documents/Quartus/M116C/inst_fetch/rs.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/tim/Documents/Quartus/M116C/inst_fetch/rs.sv|
+!i113 0
+R12
+R4
+vtestbench
+R7
+R8
+!i10b 1
+!s100 Rf0_I^gmZel=HdGIlBM5>3
+I5Ygj^@:oCCd_j3gj2@7];2
+S1
+R1
+w1670115755
+8C:/Users/tim/Documents/Quartus/M116C/inst_fetch/testbench.sv
+FC:/Users/tim/Documents/Quartus/M116C/inst_fetch/testbench.sv
+!i122 1143
+L0 1 26
+R10
+R11
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/tim/Documents/Quartus/M116C/inst_fetch/testbench.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/tim/Documents/Quartus/M116C/inst_fetch/testbench.sv|
+!i113 0
+R12
+R4

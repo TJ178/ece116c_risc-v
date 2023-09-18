@@ -1,0 +1,94 @@
+C:/Users/tim/Documents/Quartus/M116C/inst_fetch/inst_decode.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/tim/Documents/Quartus/M116C/inst_fetch/inst_decode.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module inst_decode
+
+Top level modules:
+	inst_decode
+
+} {} {}} C:/Users/tim/Documents/Quartus/M116C/inst_fetch/alu.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/tim/Documents/Quartus/M116C/inst_fetch/alu.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} C:/Users/tim/Documents/Quartus/M116C/inst_fetch/rob.sv {2 {vlog -work work -vopt -sv -stats=none C:/Users/tim/Documents/Quartus/M116C/inst_fetch/rob.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module rob
+** Warning: C:/Users/tim/Documents/Quartus/M116C/inst_fetch/rob.sv(60): (vlog-2182) 'rob_head' might be read before written in always_comb or always @* block.
+
+Top level modules:
+	rob
+
+} {} {}} C:/Users/tim/Documents/Quartus/M116C/inst_fetch/controller.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/tim/Documents/Quartus/M116C/inst_fetch/controller.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module controller
+
+Top level modules:
+	controller
+
+} {} {}} C:/Users/tim/Documents/Quartus/M116C/inst_fetch/regFile.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/tim/Documents/Quartus/M116C/inst_fetch/regFile.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module regFile
+
+Top level modules:
+	regFile
+
+} {} {}} C:/Users/tim/Documents/Quartus/M116C/inst_fetch/inst_fetch.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/tim/Documents/Quartus/M116C/inst_fetch/inst_fetch.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module inst_fetch
+
+Top level modules:
+	inst_fetch
+
+} {} {}} C:/Users/tim/Documents/Quartus/M116C/inst_fetch/processor.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/tim/Documents/Quartus/M116C/inst_fetch/processor.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module processor
+
+Top level modules:
+	processor
+
+} {} {}} C:/Users/tim/Documents/Quartus/M116C/inst_fetch/testbench.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/tim/Documents/Quartus/M116C/inst_fetch/testbench.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+
+} {} {}} C:/Users/tim/Documents/Quartus/M116C/inst_fetch/ram.sv {2 {vlog -work work -vopt -sv -stats=none C:/Users/tim/Documents/Quartus/M116C/inst_fetch/ram.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module ram
+** Warning: C:/Users/tim/Documents/Quartus/M116C/inst_fetch/ram.sv(14): (vlog-2182) 'memory' might be read before written in always_comb or always @* block.
+
+Top level modules:
+	ram
+
+} {} {}} C:/Users/tim/Documents/Quartus/M116C/inst_fetch/rs.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/tim/Documents/Quartus/M116C/inst_fetch/rs.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module rs
+
+Top level modules:
+	rs
+
+} {} {}} C:/Users/tim/Documents/Quartus/M116C/inst_fetch/alu_controller.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/tim/Documents/Quartus/M116C/inst_fetch/alu_controller.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module alu_controller
+
+Top level modules:
+	alu_controller
+
+} {} {}} C:/Users/tim/Documents/Quartus/M116C/inst_fetch/immGen.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/tim/Documents/Quartus/M116C/inst_fetch/immGen.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module immGen
+
+Top level modules:
+	immGen
+
+} {} {}} C:/Users/tim/Documents/Quartus/M116C/inst_fetch/rename.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/tim/Documents/Quartus/M116C/inst_fetch/rename.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module rename
+
+Top level modules:
+	rename
+
+} {} {}}

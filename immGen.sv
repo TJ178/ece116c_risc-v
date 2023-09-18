@@ -1,0 +1,47 @@
+module immGen(inst_in, imm_out, rs1, rs2, rd, func3);
+	input [31:0] inst_in;
+	output reg [31:0] imm_out;
+	output [4:0] rs1, rs2;
+	output reg [4:0] rd;
+	output [2:0] func3;
+	
+	wire[6:0] opcode = inst_in[6:0];
+	//assign rd = inst_in[11:7];
+	assign func3 = inst_in[14:12];
+	assign rs1 = inst_in[19:15];
+	assign rs2 = inst_in[24:20];
+	wire[6:0] func7 = inst_in[31:25];
+	wire[6:0] imm11_5 = func7;
+	wire[11:0] imm11_0 = inst_in[31:20];
+	wire[4:0] imm4_0 = inst_in[11:7];
+	wire imm12 = inst_in[31];
+	wire[5:0] imm10_5 = inst_in[30:25];
+	wire[3:0] imm4_1 = inst_in[11:8];
+	wire imm11 = inst_in[7];
+	
+	always @ (*) begin
+		case (opcode)
+			//S-type
+			7'b0100011: begin
+				imm_out = {{19{imm11_5[6]}}, imm11_5, imm4_0};
+				rd = 32'b0;
+			end
+			
+			//B-type
+			7'b1100011: begin
+				imm_out = {{20{imm12}}, imm11, imm10_5, imm4_1, 1'b0};
+				rd = inst_in[11:7];
+			end
+			
+			//I-type
+			default: begin
+				imm_out = {{20{imm11_0[11]}}, imm11_0};
+				rd = inst_in[11:7];
+			end
+		endcase
+	end
+	
+	
+
+
+endmodule

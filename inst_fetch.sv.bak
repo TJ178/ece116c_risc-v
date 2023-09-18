@@ -1,0 +1,14 @@
+module inst_fetch(pc, out);
+
+	input[31:0] pc;
+	output reg[31:0] out;
+	
+	reg [31:0] data [0:9];
+	
+	initial begin
+		$readmemh("C:\Users\tim\Documents\Quartus\M116C\inst_fetch\test.txt", data);
+	end
+	
+	assign out = data[pc];
+
+ endmodule

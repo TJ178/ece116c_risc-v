@@ -1,0 +1,173 @@
+module RS(input [5:0] rs1_1, input [5:0] rs2_1, input [5:0] rd_1, input memRead1, input memToReg1, input memWrite1, input ALUSrc1, input regWrite1, input[31:0] imm1, input [3:0] ALUCtr1, 
+          input [5:0] rs1_2, input [5:0] rs2_2, input [5:0] rd_2, input memRead2, input memToReg2, input memWrite2, input ALUSrc2, input regWrite2, input[31:0] imm2, input [3:0] ALUCtr2,
+          input [3:0] robIndex, input [5:0] rdGood1, input [5:0] rdGood2, input [5:0] rdGood3, input [31:0] rdGoodData1, input [31:0] rdGoodData2, input [31:0] rdGoodData3,
+          input clk, output reg [133:0] issued [2:0]);
+    /*
+    Reservation Station Mapping
+    0: Use Bit
+    6-1: rd
+    12-7: rs1
+    13: rs1 ready
+    19-14: rs2
+    20: rs2 ready
+    24-21: ROB index
+    26-25: FU index
+    27: memRead
+    28: memToReg
+    29: memWrite
+    30: ALUSrc
+    31: regWrite
+    63-32: immediate
+    67-64: ALUCtr 
+    68 : Forwarded Data Indicator rs1
+    100-69: Forwarded Data rs1
+    101: Forwarded Data Indictor rs2
+    133-102: Forwarded Data rs2
+    */
+
+
+    reg [2:0] FUStatus; // Functional units 0 and 1 are ALU, 2 is memory, 1 means free, 0 means occupied
+    reg [63:0] readyReg;
+    reg [133:0] resStation [31:0]; //Create reservation station capable of holding 32 entries
+    reg [3:0] rsIndex1;
+    reg [3:0] rsIndex2;
+
+    initial begin
+        FUStatus = 3'b111;
+        readyReg = 64'hffffffffffffffff;
+        for (integer i = 0; i < 32; i++) begin
+            resStation[i] = 0;
+        end
+        rsIndex1 = 0;
+        rsIndex2 = 0;
+    end
+    
+
+    //Update the ready registers on all RS instructions, then issue up to three ready ones
+    always @(posedge clk) begin
+        for (integer i = 0; i < 32; i++) begin
+            //Update the value if it matches the forwarded registers, mark to indicate forwarding
+            if (resStation[i][12:7] == rdGood1) begin
+                resStation[i][100:69] = rdGoodData1;
+                resStation[i][68] = 1;
+            end
+            else if (resStation[i][12:7] == rdGood2) begin
+                resStation[i][100:69]  = rdGoodData2;
+                resStation[i][68] = 1;
+            end
+            else if (resStation[i][12:7] == rdGood3) begin
+                resStation[i][100:69]  = rdGoodData3;
+                resStation[i][68] = 1;
+            end
+
+            if (resStation[i][19:14] == rdGood1) begin
+                resStation[i][133:102] = rdGoodData1;
+                resStation[i][101] = 1;
+            end
+            else if (resStation[i][19:14] == rdGood2) begin
+                resStation[i][133:102] = rdGoodData2;
+                resStation[i][101] = 1;
+            end
+            else if (resStation[i][19:14] == rdGood3) begin
+                resStation[i][133:102] = rdGoodData3;
+                resStation[i][101] = 1;
+            end
+            
+        end
+        readyReg[rdGood1] = 1;
+        readyReg[rdGood2] = 1;
+        readyReg[rdGood3] = 1;
+        for (integer i = 0; i < 32; i++) begin
+            //Store whether instruction is ready to execute or not based on readyReg
+            resStation[i][13] = resStation[i][0] & readyReg[resStation[i][12:7]]; 
+            resStation[i][20] = resStation[i][0] & readyReg[resStation[i][19:14]];
+        end
+        for (integer i = 0; i < 3; i++) begin
+            issued[i] = 0;
+        end
+        for (integer i = 0; i < 3; i++) begin
+            for (integer j = 0; j < 32; j++) begin
+                //Issue if there is instruction, both regs ready, FU is free
+                if (resStation[j][0] && resStation[j][13] & resStation[j][20] && FUStatus[resStation[j][26:25]]) begin
+                    //Places ALU0 FU into issued[0], etc
+                    issued[resStation[j][26:25]] = resStation[j];
+                    resStation[j][0] = 0;
+                    FUStatus[resStation[j][26:25]] = 0;
+                    break;
+                end
+            end
+        end
+    end
+
+    //Place two new instructions into RS
+    always @ (negedge clk) begin
+        $write("Iteration is ");
+        $display(rs1_1);
+        $display(ALUCtr1);
+        if (!(rs1_1 === 6'bx)) begin
+            //Find the next index to store the new instructions in reservation station
+            for (integer i = 0; i < 32; i++) begin
+                if (resStation[i][0] == 0) begin
+                    rsIndex1 = i;
+                    resStation[rsIndex1] = 0;
+                    resStation[i][0] = 1;
+                    break;
+                end
+            end
+            for (integer i = 0; i < 32; i++) begin
+                if (resStation[i][0] == 0) begin
+                    rsIndex2 = i;
+                    resStation[rsIndex2] = 0;
+                    resStation[i][0] = 1;
+                    break;
+                end
+            end
+            //Place into Reservation Station instruction 1
+            resStation[rsIndex1][6:1] = rd_1;
+            resStation[rsIndex1][12:7] = rs1_1;
+            resStation[rsIndex1][19:14] = rs2_1;
+            resStation[rsIndex1][24:21] = robIndex + 1;
+            resStation[rsIndex1][26:25] = (memRead1 | memWrite1) ? 2 : ( (FUStatus[0]) ? 0 : 1);
+            resStation[rsIndex1][27] = memRead1;
+            resStation[rsIndex1][28] = memToReg1;
+            resStation[rsIndex1][29] = memWrite1;
+            resStation[rsIndex1][30] = ALUSrc1;
+            resStation[rsIndex1][31] = regWrite1;
+            resStation[rsIndex1][63:32] = imm1;
+            resStation[rsIndex1][67:64] = ALUCtr1;
+
+            //Place into Reservation Station instruction 2
+            
+            resStation[rsIndex2][6:1] = rd_2;
+            resStation[rsIndex2][12:7] = rs1_2;
+            resStation[rsIndex2][19:14] = rs2_2;
+            resStation[rsIndex2][24:21] = robIndex + 2;
+            resStation[rsIndex2][26:25] = (memRead2 | memWrite2) ? 2 : ( (resStation[rsIndex1][26:25] > 0) ? 0 : 1);
+            resStation[rsIndex2][27] = memRead2;
+            resStation[rsIndex2][28] = memToReg2;
+            resStation[rsIndex2][29] = memWrite2;
+            resStation[rsIndex2][30] = ALUSrc2;
+            resStation[rsIndex2][31] = regWrite2;
+            resStation[rsIndex2][63:32] = imm2;
+            resStation[rsIndex2][67:64] = ALUCtr2;
+
+            $display("First ten rows");
+            for (integer i = 0; i < 10; i++) begin
+                for (integer j = 0; j < 134; j++) begin
+                    $write(resStation[i][j]);
+                end
+                $display();
+            end
+        end
+    
+    end
+
+    
+
+
+
+
+
+
+
+endmodule

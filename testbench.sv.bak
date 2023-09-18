@@ -1,0 +1,15 @@
+module testbench(pc, out);
+	output reg [31:0] pc;
+	output [31:0] out;
+	
+	inst_fetch a(pc, out);
+	
+	initial begin
+		pc = 0;
+		#5;
+		pc = 1;
+		#5;
+		$finish;
+	end
+
+endmodule

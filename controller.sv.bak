@@ -1,0 +1,4 @@
+module controller(opcode, br, memrd, memtoreg, aluop, memwr, alusrc, regwr);
+	input[6:0] opcode;
+	output br, memrd, memtoreg, memwr, alusrc, regwr;
+	output[3:0] aluop;

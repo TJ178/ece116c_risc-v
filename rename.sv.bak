@@ -1,0 +1,9 @@
+module rename(regToFree, free, rs1_1, rs2_1, rd_1, p1_1, p2_1, pd_1, _
+										 rs1_2, rs2_2, rd_2, p1_2, p2_2, pd_2);
+	input[4:0] regToFree, rs1_1, rs2_1, rd_1, rs1_2, rs2_2, rd_2);
+	input free;
+	output[5:0] p1_1, p1_2, p2_1, p2_2, pd_1, pd_2;
+	
+	
+	
+endmodule

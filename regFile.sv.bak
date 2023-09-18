@@ -1,0 +1,9 @@
+module regFile(rd_rg1, rd_rg2, wr_rg, wr_d, rd_d1, rd_d2, control);
+	input [4:0] rd_rg1, rd_rg2, wr_rg;
+	input [31:0] wr_d;
+	input control;
+	output [31:0] rd_d1, rd_d2;
+	
+
+
+endmodule

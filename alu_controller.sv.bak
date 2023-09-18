@@ -1,0 +1,9 @@
+module alu_controller(aluop, inst30, func3, aluctrl);
+	input[1:0] aluop;
+	input inst30;
+	input[2:0] func3;
+	output[3:0] aluctrl;
+	
+	
+
+endmodule;
